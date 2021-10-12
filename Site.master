@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="StyleSheets_Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>eTenancy System</title>
+	<script src="/Js/jquery.min.js"></script>
+	<script src="/Js/bootstrap.min.js"></script>
+	<script src="/Js/alertify.min.js"></script>
+
+	<link rel="stylesheet" href="/Css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/Css/alertify.min.css" />
+	<link rel="stylesheet" href="/Css/alertify.bootstrap.min.css" />
+
+
+	<script>
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server" autocomplete="off">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<%--<a class="navbar-brand"></a>--%>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="/Default.aspx">HOME</a></li>
+						<li id="PROPERTY"><a href="/Property">PROPERTY</a></li>
+						<li id="CUSTOMER"><a href="/Customer/">CUSTOMER</a></li>
+						<li id="TENANCY"><a href="/Tenancy/">TENANCY</a></li>
+						<li id="BILLING"><a href="/Billing/">BILLING</a></li>
+						<li id="PAYMENT"><a href="/Payment/">PAYMENT</a></li>
+						<li><a href="/Setup.aspx">SETUP</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a>
+								<asp:LoginName ID="LoginName1" runat="server" />
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container" style="margin-top: 65px;">
+			<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+			<div class="container">
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
